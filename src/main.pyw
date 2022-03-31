@@ -20,10 +20,10 @@ class pIDE:
         self.settitle()
         
 
-        self.menubar = Menu(self.root, font=("Segoe UI",14,"bold"), activebackground="skyblue", bg='#333333')
+        self.menubar = Menu(self.root, font=("Segoe UI",14,"bold"), activebackground="skyblue", bg='#333333') # Menu bar at the top of the screen
         self.root.config(menu=self.menubar)
         
-        self.filemenu = Menu(self.menubar,font=("Segoe UI",11,"bold"),activebackground="skyblue",tearoff=0) # Menu bar at the top of the screen
+        self.filemenu = Menu(self.menubar,font=("Segoe UI",11,"bold"),activebackground="skyblue",tearoff=0)
         self.filemenu.add_command(label="New",accelerator="Ctrl+N",command=self.newfile)
         self.filemenu.add_command(label="Open",accelerator="Ctrl+O",command=self.openfile)
         self.filemenu.add_command(label="Save",accelerator="Ctrl+S",command=self.savefile)
@@ -181,3 +181,4 @@ class pIDE:
 root = Tk()
 pIDE(root)
 root.mainloop()
+
