@@ -1,4 +1,7 @@
 # pIDE
+<img src="https://img.shields.io/github/languages/code-size/chateauvisionn/pide">
+<img src="https://img.shields.io/github/commit-activity/m/chateauvisionn/pide">
+<img src="https://img.shields.io/github/last-commit/chateauvisionn/pide">
 
 ## Installation
 
