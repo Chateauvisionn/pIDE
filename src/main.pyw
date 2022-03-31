@@ -1,3 +1,6 @@
+# background='#1e1e1e', foreground='#ffffff'
+# bar #333333
+# other #7a838e
 from tkinter import *
 from tkinter import messagebox
 from tkinter import filedialog
@@ -10,17 +13,17 @@ class pIDE:
         self.filename = str()
         self.title = StringVar()
 
-        self.filetypes = (("All Files","*.*"),("Text Files","*.txt"),("Python Files","*.py"), ("C files", ("*.c", "*.h")), ("Ren'py files", "*.rpy"), ("Markdown files", "*.md"))
+        self.filetypes = (("All Files","*.*"),("""Text Files (*.txt)""","*.txt"),("""Python Files ("*.py", "*.pyw", "*.py3", "*.pxd", "*.pyx", "*.ipynb")""",("*.py", "*.pyw", "*.py3", "*.pxd", "*.pyx", "*.ipynb")), ("""C files ("*.c", "*.h")""", ("*.c", "*.h")), ("""Ren'py files (*.rpy)""", "*.rpy"), ("""Markdown files (*.md)""", "*.md"))
 
-        self.titlebar = Label(self.root, textvariable=self.title, font=("Arial", 12), bd=2, relief=GROOVE)
+        self.titlebar = Label(self.root, textvariable=self.title, font=("Arial", 12), bd=2, relief=GROOVE, bg='#7a838e')
         self.titlebar.pack(side=TOP, fill=BOTH)
         self.settitle()
         
 
-        self.menubar = Menu(self.root, font=("Segoe UI",15,"bold"), activebackground="skyblue")
+        self.menubar = Menu(self.root, font=("Segoe UI",14,"bold"), activebackground="skyblue", bg='#333333')
         self.root.config(menu=self.menubar)
         
-        self.filemenu = Menu(self.menubar,font=("Segoe UI",12,"bold"),activebackground="skyblue",tearoff=0) # Menu bar at the top of the screen
+        self.filemenu = Menu(self.menubar,font=("Segoe UI",11,"bold"),activebackground="skyblue",tearoff=0) # Menu bar at the top of the screen
         self.filemenu.add_command(label="New",accelerator="Ctrl+N",command=self.newfile)
         self.filemenu.add_command(label="Open",accelerator="Ctrl+O",command=self.openfile)
         self.filemenu.add_command(label="Save",accelerator="Ctrl+S",command=self.savefile)
@@ -31,7 +34,7 @@ class pIDE:
         self.filemenu.add_command(label="Exit",accelerator="Ctrl+E",command=self.exit)
         self.menubar.add_cascade(label="File", menu=self.filemenu)
         
-        self.editmenu = Menu(self.menubar,font=("Segoe UI",12,"bold"),activebackground="skyblue",tearoff=0)
+        self.editmenu = Menu(self.menubar,font=("Segoe UI",11,"bold"),activebackground="skyblue",tearoff=0)
         self.editmenu.add_command(label="Cut",accelerator="Ctrl+X",command=self.cut)
         self.editmenu.add_command(label="Copy",accelerator="Ctrl+C",command=self.copy)
         self.editmenu.add_command(label="Paste",accelerator="Ctrl+V",command=self.paste)
@@ -40,12 +43,12 @@ class pIDE:
         
         self.editmenu.add_command(label="Undo",accelerator="Ctrl+Z",command=self.undo)
         self.menubar.add_cascade(label="Edit", menu=self.editmenu)
-        self.helpmenu = Menu(self.menubar,font=("Segoe UI",12,"bold"),activebackground="skyblue",tearoff=0)
+        self.helpmenu = Menu(self.menubar,font=("Segoe UI",11,"bold"),activebackground="skyblue",tearoff=0)
         self.helpmenu.add_command(label="About",command=self.infoabout)
         self.menubar.add_cascade(label="Help", menu=self.helpmenu)
         
         scrol_y = Scrollbar(self.root,orient=VERTICAL)
-        self.txtarea = Text(self.root,yscrollcommand=scrol_y.set,font=("Consolas",12, "bold"),state="normal",relief=GROOVE)
+        self.txtarea = Text(self.root,yscrollcommand=scrol_y.set,font=("Consolas",13, "bold"),state="normal",relief=GROOVE, background='#1e1e1e', foreground='#ffffff')
         scrol_y.pack(side=RIGHT,fill=Y)
         scrol_y.config(command=self.txtarea.yview)
         self.txtarea.pack(fill=BOTH,expand=1)
