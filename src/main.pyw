@@ -13,7 +13,7 @@ class pIDE:
         self.filename = str()
         self.title = StringVar()
 
-        self.filetypes = (("All Files","*.*"),("""Text Files (*.txt)""","*.txt"),("""Python Files ("*.py", "*.pyw", "*.py3", "*.pxd", "*.pyx", "*.ipynb")""",("*.py", "*.pyw", "*.py3", "*.pxd", "*.pyx", "*.ipynb")), ("""C files ("*.c", "*.h")""", ("*.c", "*.h")), ("""Ren'py files (*.rpy)""", "*.rpy"), ("""Markdown files (*.md)""", "*.md"))
+        self.filetypes = (("All Files","*.*"),("""Text Files (*.txt)""","*.txt"),("""Python Files ("*.py", "*.pyw", "*.py3", "*.pxd", "*.pyx", "*.ipynb")""",("*.py", "*.pyw", "*.py3", "*.pxd", "*.pyx", "*.ipynb")), ("""C files ("*.c", "*.h")""", ("*.c", "*.h")), ("""Ren'py files (*.rpy)""", "*.rpy"), ("""Markdown files (*.md)""", "*.md"), ("""Config file ("*.ini")""", "*.ini"))
 
         self.titlebar = Label(self.root, textvariable=self.title, font=("Arial", 12), bd=2, relief=GROOVE, bg='#7a838e')
         self.titlebar.pack(side=TOP, fill=BOTH)
